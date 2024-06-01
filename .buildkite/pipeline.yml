@@ -17,4 +17,4 @@ steps:
     key: deploy
     depends_on: test
     agents:
-      queue: default-queue
+      queue: foo
