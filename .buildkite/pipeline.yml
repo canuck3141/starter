@@ -18,3 +18,4 @@ steps:
     depends_on: test
     agents:
       queue: foo
+      size: small
