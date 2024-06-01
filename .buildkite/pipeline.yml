@@ -7,6 +7,8 @@ steps:
     command: echo "Test the rocket1"
     key: test
     depends_on: build
+    agents:
+      size: medium
 
   - label: ":rocket: Deploy"
     command: |
