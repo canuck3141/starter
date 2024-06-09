@@ -5,7 +5,7 @@ steps:
 
   - group: "My Group"
     key: "mygroup"
-    steps:
+    - steps:
       - label: "setup"
       command: echo "Setup ..." && sleep 5
       - label: "execute"
