@@ -4,6 +4,7 @@ steps:
     key: build
 
   - group: "My Group"
+    key: "mygroup"
     steps:
       - label: "setup"
       command: echo "Setup ..." && sleep 5
