@@ -3,6 +3,15 @@ steps:
     command: echo "Build the rocket"
     key: build
 
+  - group: "My Group"
+    steps:
+      - label: "setup"
+      command: echo "Setup ..." && sleep 5
+      - label: "execute"
+      command: echo "Execute stuff" && sleep 10
+      - label: "cleanup"
+      command: echo "Cleanup"
+
   - label: ":white_check_mark: Test"
     command: echo "Test the rocket1"
     key: test
