@@ -1,16 +1,44 @@
 steps:
-  - label: ":construction_worker: Build"
-    command: echo "Build the rocket"
-    key: build
+  - group: ":lock_with_ink_pen: Security Audits"
+    key: "audits"
+    steps:
+      - label: ":brakeman: Brakeman"
+        command: echo "brakeman"
+      - label: ":bundleaudit: Bundle Audit"
+        command: echo "bundleaudit"
+      - label: ":yarn: Yarn Audit"
+        command: echo "yarn audit"
+      - label: ":yarn: Outdated Check"
+        command: echo "outdated"
 
-  - label: ":white_check_mark: Test"
-    command: echo "Test the rocket"
-    key: test
-    depends_on: build
+# steps:
+#   - label: ":construction_worker: Build"
+#     command: echo "Build the rocket"
+#     key: build
 
-  - label: ":rocket: Deploy"
-    command: |
-      echo "Launch the rocket"
-      cat .buildkite/annotation.md | buildkite-agent annotate --style "success"
-    key: deploy
-    depends_on: test
+#   - group: "My Group"
+#     key: "mygroup"
+#     - steps:
+#       - label: "setup"
+#       command: echo "Setup ..." && sleep 5
+#       - label: "execute"
+#       command: echo "Execute stuff" && sleep 10
+#       - label: "cleanup"
+#       command: echo "Cleanup"
+
+#   - label: ":white_check_mark: Test"
+#     command: echo "Test the rocket1"
+#     key: test
+#     depends_on: build
+#     agents:
+#       size: medium
+
+#   - label: ":rocket: Deploy"
+#     command: |
+#       echo "Launch the rocket"
+#       cat .buildkite/annotation.md | buildkite-agent annotate --style "success"
+#     key: deploy
+#     depends_on: test
+#     agents:
+#       queue: foo
+#       size: small
